@@ -16,3 +16,6 @@ config :awcodify, Awcodify.Repo,
   database: "awcodify_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+# Configure comeonin to make it faster
+config :bcrypt_elixir, log_rounds: 4

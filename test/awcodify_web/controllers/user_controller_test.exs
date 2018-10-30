@@ -3,9 +3,19 @@ defmodule AwcodifyWeb.UserControllerTest do
 
   alias Awcodify.Contents
 
-  @create_attrs %{email: "some email", password_digest: "some password_digest", username: "some username"}
-  @update_attrs %{email: "some updated email", password_digest: "some updated password_digest", username: "some updated username"}
-  @invalid_attrs %{email: nil, password_digest: nil, username: nil}
+  @create_attrs %{
+    email: "test@example.com",
+    password: "test1234",
+    password_confirmation: "test1234",
+    username: "example"
+  }
+  @update_attrs %{
+    email: "some updated email",
+    password: "update1234",
+    password_confirmation: "update1234",
+    username: "some updated username"
+  }
+  @invalid_attrs %{email: nil, password: nil, password: nil, username: nil}
 
   def fixture(:user) do
     {:ok, user} = Contents.create_user(@create_attrs)
@@ -75,6 +85,7 @@ defmodule AwcodifyWeb.UserControllerTest do
     test "deletes chosen user", %{conn: conn, user: user} do
       conn = delete(conn, Routes.user_path(conn, :delete, user))
       assert redirected_to(conn) == Routes.user_path(conn, :index)
+
       assert_error_sent 404, fn ->
         get(conn, Routes.user_path(conn, :show, user))
       end

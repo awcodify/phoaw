@@ -43,7 +43,6 @@ defmodule Awcodify.ContentsTest do
       post = post_fixture()
       assert {:ok, %Post{} = post} = Contents.update_post(post, @update_attrs)
 
-      
       assert post.body == "some updated body"
       assert post.title == "some updated title"
     end
@@ -69,8 +68,18 @@ defmodule Awcodify.ContentsTest do
   describe "users" do
     alias Awcodify.Contents.User
 
-    @valid_attrs %{email: "some email", password_digest: "some password_digest", username: "some username"}
-    @update_attrs %{email: "some updated email", password_digest: "some updated password_digest", username: "some updated username"}
+    @valid_attrs %{
+      email: "some email",
+      password: "examplepassword",
+      password_confirmation: "examplepassword",
+      username: "some username"
+    }
+    @update_attrs %{
+      email: "some updated email",
+      password: "updatedpassword",
+      password_confirmation: "updatedpassword",
+      username: "some updated username"
+    }
     @invalid_attrs %{email: nil, password_digest: nil, username: nil}
 
     def user_fixture(attrs \\ %{}) do
@@ -79,7 +88,7 @@ defmodule Awcodify.ContentsTest do
         |> Enum.into(@valid_attrs)
         |> Contents.create_user()
 
-      user
+      user = %{user | password: nil, password_confirmation: nil}
     end
 
     test "list_users/0 returns all users" do
@@ -95,7 +104,7 @@ defmodule Awcodify.ContentsTest do
     test "create_user/1 with valid data creates a user" do
       assert {:ok, %User{} = user} = Contents.create_user(@valid_attrs)
       assert user.email == "some email"
-      assert user.password_digest == "some password_digest"
+      assert Comeonin.Bcrypt.checkpw(@valid_attrs.password, user.password_digest)
       assert user.username == "some username"
     end
 
@@ -107,9 +116,8 @@ defmodule Awcodify.ContentsTest do
       user = user_fixture()
       assert {:ok, %User{} = user} = Contents.update_user(user, @update_attrs)
 
-      
       assert user.email == "some updated email"
-      assert user.password_digest == "some updated password_digest"
+      assert Comeonin.Bcrypt.checkpw(@update_attrs.password, user.password_digest)
       assert user.username == "some updated username"
     end
 
