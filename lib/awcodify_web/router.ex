@@ -18,6 +18,7 @@ defmodule AwcodifyWeb.Router do
 
     get "/", PageController, :index
     resources "/posts", PostController
+    resources "/users", UserController
   end
 
   # Other scopes may use custom stacks.
