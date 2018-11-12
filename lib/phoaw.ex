@@ -1,6 +1,6 @@
-defmodule Awcodify do
+defmodule Phoaw do
   @moduledoc """
-  Awcodify keeps the contexts that define your domain
+  Phoaw keeps the contexts that define your domain
   and business logic.
 
   Contexts are also responsible for managing your data, regardless

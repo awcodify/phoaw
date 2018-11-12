@@ -1,12 +1,12 @@
-defmodule Awcodify.Contents do
+defmodule Phoaw.Contents do
   @moduledoc """
   The Contents context.
   """
 
   import Ecto.Query, warn: false
-  alias Awcodify.Repo
+  alias Phoaw.Repo
 
-  alias Awcodify.Contents.Post
+  alias Phoaw.Contents.Post
 
   @doc """
   Returns the list of posts.
@@ -102,7 +102,7 @@ defmodule Awcodify.Contents do
     Post.changeset(post, %{})
   end
 
-  alias Awcodify.Contents.User
+  alias Phoaw.Contents.User
 
   @doc """
   Returns the list of users.

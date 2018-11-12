@@ -1,2 +1,2 @@
 ExUnit.start()
-Ecto.Adapters.SQL.Sandbox.mode(Awcodify.Repo, :manual)
+Ecto.Adapters.SQL.Sandbox.mode(Phoaw.Repo, :manual)

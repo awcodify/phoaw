@@ -1,4 +1,4 @@
-# Awcodify
+# Phoaw
 
 To start your Phoenix server:
 

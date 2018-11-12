@@ -1,4 +1,4 @@
-defmodule AwcodifyWeb.ChannelCase do
+defmodule PhoawWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -21,15 +21,15 @@ defmodule AwcodifyWeb.ChannelCase do
       use Phoenix.ChannelTest
 
       # The default endpoint for testing
-      @endpoint AwcodifyWeb.Endpoint
+      @endpoint PhoawWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Awcodify.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Phoaw.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Awcodify.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Phoaw.Repo, {:shared, self()})
     end
 
     :ok

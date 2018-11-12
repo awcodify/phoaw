@@ -1,3 +1,3 @@
-defmodule AwcodifyWeb.PageView do
-  use AwcodifyWeb, :view
+defmodule PhoawWeb.PageView do
+  use PhoawWeb, :view
 end

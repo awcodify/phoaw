@@ -1,4 +1,4 @@
-defmodule Awcodify.Contents.User do
+defmodule Phoaw.Contents.User do
   use Ecto.Schema
   import Ecto.Changeset
   import Comeonin.Bcrypt, only: [hashpwsalt: 1]

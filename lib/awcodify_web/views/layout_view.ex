@@ -1,3 +1,3 @@
-defmodule AwcodifyWeb.LayoutView do
-  use AwcodifyWeb, :view
+defmodule PhoawWeb.LayoutView do
+  use PhoawWeb, :view
 end

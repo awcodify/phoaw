@@ -1,7 +1,7 @@
-defmodule AwcodifyWeb.PostControllerTest do
-  use AwcodifyWeb.ConnCase
+defmodule PhoawWeb.PostControllerTest do
+  use PhoawWeb.ConnCase
 
-  alias Awcodify.Contents
+  alias Phoaw.Contents
 
   @create_attrs %{body: "some body", title: "some title"}
   @update_attrs %{body: "some updated body", title: "some updated title"}

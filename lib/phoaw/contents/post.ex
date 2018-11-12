@@ -1,4 +1,4 @@
-defmodule Awcodify.Contents.Post do
+defmodule Phoaw.Contents.Post do
   use Ecto.Schema
   import Ecto.Changeset
 

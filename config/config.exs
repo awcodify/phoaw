@@ -7,15 +7,15 @@
 # General application configuration
 use Mix.Config
 
-config :awcodify,
-  ecto_repos: [Awcodify.Repo]
+config :phoaw,
+  ecto_repos: [Phoaw.Repo]
 
 # Configures the endpoint
-config :awcodify, AwcodifyWeb.Endpoint,
+config :phoaw, PhoawWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "5EBILhaUgBZEKDO1Lk25UyAZKfHMj7f9RuFEBj6Q/CBLC+FUEbxCrmpADQPLyJvG",
-  render_errors: [view: AwcodifyWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Awcodify.PubSub, adapter: Phoenix.PubSub.PG2]
+  render_errors: [view: PhoawWeb.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: Phoaw.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,

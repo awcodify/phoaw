@@ -1,8 +1,8 @@
-defmodule AwcodifyWeb.PostController do
-  use AwcodifyWeb, :controller
+defmodule PhoawWeb.PostController do
+  use PhoawWeb, :controller
 
-  alias Awcodify.Contents
-  alias Awcodify.Contents.Post
+  alias Phoaw.Contents
+  alias Phoaw.Contents.Post
 
   def index(conn, _params) do
     posts = Contents.list_posts()
