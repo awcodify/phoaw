@@ -68,8 +68,10 @@ config :phoenix, :plug_init_mode, :runtime
 
 # Configure your database
 config :awcodify, Awcodify.Repo,
-  username: "postgres",
-  password: "postgres",
-  database: "awcodify_dev",
-  hostname: "localhost",
+  adapter: Ecto.Adapters.Postgres,
+  username: System.get_env("DEV_DB_USERNAME"),
+  password: System.get_env("DEV_DB_PASSWORD"),
+  database: System.get_env("DEV_DB_NAME"),
+  hostname: System.get_env("DEV_DB_HOST"),
+  port: System.get_env("DEV_DB_PORT"),
   pool_size: 10

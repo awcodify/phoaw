@@ -11,10 +11,12 @@ config :logger, level: :warn
 
 # Configure your database
 config :awcodify, Awcodify.Repo,
-  username: "postgres",
-  password: "postgres",
-  database: "awcodify_test",
-  hostname: "localhost",
+  adapter: Ecto.Adapters.Postgres,
+  username: System.get_env("TEST_DB_USERNAME"),
+  password: System.get_env("TEST_DB_PASSWORD"),
+  database: System.get_env("TEST_DB_NAME"),
+  hostname: System.get_env("TEST_DB_HOST"),
+  port: System.get_env("TEST_DB_PORT"),
   pool: Ecto.Adapters.SQL.Sandbox
 
 # Configure comeonin to make it faster
