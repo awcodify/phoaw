@@ -1,7 +1,7 @@
-defmodule Awcodify.Contents.UserTest do
-  use Awcodify.DataCase
+defmodule Phoaw.Contents.UserTest do
+  use Phoaw.DataCase
 
-  alias Awcodify.Contents.User
+  alias Phoaw.Contents.User
 
   @valid_attrs %{
     email: "test@example.com",

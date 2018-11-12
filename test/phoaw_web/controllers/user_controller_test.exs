@@ -1,7 +1,7 @@
-defmodule AwcodifyWeb.UserControllerTest do
-  use AwcodifyWeb.ConnCase
+defmodule PhoawWeb.UserControllerTest do
+  use PhoawWeb.ConnCase
 
-  alias Awcodify.Contents
+  alias Phoaw.Contents
 
   @create_attrs %{
     email: "test@example.com",

@@ -1,4 +1,4 @@
-defmodule Awcodify.Repo.Migrations.CreateUsers do
+defmodule Phoaw.Repo.Migrations.CreateUsers do
   use Ecto.Migration
 
   def change do

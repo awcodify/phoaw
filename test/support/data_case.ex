@@ -1,4 +1,4 @@
-defmodule Awcodify.DataCase do
+defmodule Phoaw.DataCase do
   @moduledoc """
   This module defines the setup for tests requiring
   access to the application's data layer.
@@ -16,20 +16,20 @@ defmodule Awcodify.DataCase do
 
   using do
     quote do
-      alias Awcodify.Repo
+      alias Phoaw.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import Awcodify.DataCase
+      import Phoaw.DataCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Awcodify.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Phoaw.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Awcodify.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Phoaw.Repo, {:shared, self()})
     end
 
     :ok

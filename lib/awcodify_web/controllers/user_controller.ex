@@ -1,8 +1,8 @@
-defmodule AwcodifyWeb.UserController do
-  use AwcodifyWeb, :controller
+defmodule PhoawWeb.UserController do
+  use PhoawWeb, :controller
 
-  alias Awcodify.Contents
-  alias Awcodify.Contents.User
+  alias Phoaw.Contents
+  alias Phoaw.Contents.User
 
   def index(conn, _params) do
     users = Contents.list_users()

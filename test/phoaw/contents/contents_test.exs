@@ -1,10 +1,10 @@
-defmodule Awcodify.ContentsTest do
-  use Awcodify.DataCase
+defmodule Phoaw.ContentsTest do
+  use Phoaw.DataCase
 
-  alias Awcodify.Contents
+  alias Phoaw.Contents
 
   describe "posts" do
-    alias Awcodify.Contents.Post
+    alias Phoaw.Contents.Post
 
     @valid_attrs %{body: "some body", title: "some title"}
     @update_attrs %{body: "some updated body", title: "some updated title"}
@@ -66,7 +66,7 @@ defmodule Awcodify.ContentsTest do
   end
 
   describe "users" do
-    alias Awcodify.Contents.User
+    alias Phoaw.Contents.User
 
     @valid_attrs %{
       email: "some email",

@@ -1,4 +1,4 @@
-defmodule Awcodify.Application do
+defmodule Phoaw.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -9,23 +9,23 @@ defmodule Awcodify.Application do
     # List all child processes to be supervised
     children = [
       # Start the Ecto repository
-      Awcodify.Repo,
+      Phoaw.Repo,
       # Start the endpoint when the application starts
-      AwcodifyWeb.Endpoint
-      # Starts a worker by calling: Awcodify.Worker.start_link(arg)
-      # {Awcodify.Worker, arg},
+      PhoawWeb.Endpoint
+      # Starts a worker by calling: Phoaw.Worker.start_link(arg)
+      # {Phoaw.Worker, arg},
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Awcodify.Supervisor]
+    opts = [strategy: :one_for_one, name: Phoaw.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    AwcodifyWeb.Endpoint.config_change(changed, removed)
+    PhoawWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

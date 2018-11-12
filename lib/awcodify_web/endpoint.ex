@@ -1,7 +1,7 @@
-defmodule AwcodifyWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :awcodify
+defmodule PhoawWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :phoaw
 
-  socket "/socket", AwcodifyWeb.UserSocket,
+  socket "/socket", PhoawWeb.UserSocket,
     websocket: true,
     longpoll: false
 
@@ -11,7 +11,7 @@ defmodule AwcodifyWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :awcodify,
+    from: :phoaw,
     gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
@@ -39,8 +39,8 @@ defmodule AwcodifyWeb.Endpoint do
   # Set :encryption_salt if you would also like to encrypt it.
   plug Plug.Session,
     store: :cookie,
-    key: "_awcodify_key",
+    key: "_phoaw_key",
     signing_salt: "VAzGOGN1"
 
-  plug AwcodifyWeb.Router
+  plug PhoawWeb.Router
 end

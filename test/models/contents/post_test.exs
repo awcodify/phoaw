@@ -1,7 +1,7 @@
-defmodule Awcodify.Contents.PostTest do
-  use Awcodify.DataCase
+defmodule Phoaw.Contents.PostTest do
+  use Phoaw.DataCase
 
-  alias Awcodify.Contents.Post
+  alias Phoaw.Contents.Post
 
   @valid_attrs %{body: "some body", title: "some title"}
   @invalid_attrs %{}

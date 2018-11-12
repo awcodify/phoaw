@@ -1,8 +1,8 @@
-defmodule AwcodifyWeb.UserSocket do
+defmodule PhoawWeb.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", AwcodifyWeb.RoomChannel
+  # channel "room:*", PhoawWeb.RoomChannel
 
   # Socket params are passed from the client and can
   # be used to verify and authenticate a user. After
@@ -26,7 +26,7 @@ defmodule AwcodifyWeb.UserSocket do
   # Would allow you to broadcast a "disconnect" event and terminate
   # all active sockets and channels for a given user:
   #
-  #     AwcodifyWeb.Endpoint.broadcast("user_socket:#{user.id}", "disconnect", %{})
+  #     PhoawWeb.Endpoint.broadcast("user_socket:#{user.id}", "disconnect", %{})
   #
   # Returning `nil` makes this socket anonymous.
   def id(_socket), do: nil

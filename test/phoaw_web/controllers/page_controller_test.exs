@@ -1,5 +1,5 @@
-defmodule AwcodifyWeb.PageControllerTest do
-  use AwcodifyWeb.ConnCase
+defmodule PhoawWeb.PageControllerTest do
+  use PhoawWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, "/")

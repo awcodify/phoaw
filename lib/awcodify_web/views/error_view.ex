@@ -1,5 +1,5 @@
-defmodule AwcodifyWeb.ErrorView do
-  use AwcodifyWeb, :view
+defmodule PhoawWeb.ErrorView do
+  use PhoawWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

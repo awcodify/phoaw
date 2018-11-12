@@ -1,5 +1,5 @@
-defmodule AwcodifyWeb.Router do
-  use AwcodifyWeb, :router
+defmodule PhoawWeb.Router do
+  use PhoawWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,7 +13,7 @@ defmodule AwcodifyWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", AwcodifyWeb do
+  scope "/", PhoawWeb do
     pipe_through :browser
 
     get "/", PageController, :index
@@ -22,7 +22,7 @@ defmodule AwcodifyWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", AwcodifyWeb do
+  # scope "/api", PhoawWeb do
   #   pipe_through :api
   # end
 end
