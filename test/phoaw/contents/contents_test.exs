@@ -88,7 +88,7 @@ defmodule Phoaw.ContentsTest do
         |> Enum.into(@valid_attrs)
         |> Contents.create_user()
 
-      user = %{user | password: nil, password_confirmation: nil}
+      %{user | password: nil, password_confirmation: nil}
     end
 
     test "list_users/0 returns all users" do
