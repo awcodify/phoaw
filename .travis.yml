@@ -24,3 +24,8 @@ install: true
 
 script:
   - mix test
+
+cache:
+  directories:
+    - _build
+    - deps
