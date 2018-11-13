@@ -18,5 +18,7 @@ before_script:
   - mix deps.get
   - mix do ecto.create, ecto.migrate
 
+install: true
+
 script:
   - mix test
