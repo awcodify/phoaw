@@ -73,4 +73,4 @@ config :awcodify, Awcodify.Repo,
   database: System.get_env("DEV_DB_NAME"),
   hostname: System.get_env("DEV_DB_HOST"),
   port: System.get_env("DEV_DB_PORT"),
-  pool_size: 10
+  pool_size: System.get_env("DEV_DB_POOL_SIZE")
