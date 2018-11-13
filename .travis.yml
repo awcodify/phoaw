@@ -14,7 +14,8 @@ services:
   - postgresql
 
 before_script:
-  - cp config/travis.exs config/test.secret.exs
+  - cp config/travis.exs config/dev.secret.exs
+  - mix local.hex --force
   - mix deps.get
   - mix do ecto.create, ecto.migrate
 
