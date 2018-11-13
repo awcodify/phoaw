@@ -13,17 +13,22 @@ addons:
 services:
   - postgresql
 
-before_script:
-  - cp config/travis.exs config/test.secret.exs
-  - MIX_ENV=test mix local.rebar --force
-  - MIX_ENV=test mix local.hex --force
-  - MIX_ENV=test mix deps.get
-  - MIX_ENV=test mix do ecto.create, ecto.migrate
-
-install: true
-
-script:
-  - mix test
+jobs:  
+  include:
+    - stage: "Tests"                # naming the Tests stage
+      name: "Unit Tests"            # names the first Tests stage job
+      before_script:
+        - cp config/travis.exs config/test.secret.exs
+        - MIX_ENV=test mix local.rebar --force
+        - MIX_ENV=test mix local.hex --force
+        - MIX_ENV=test mix deps.get
+        - MIX_ENV=test mix do ecto.create, ecto.migrate
+      install: true
+      script:
+        - mix test
+    - stage: 'Code Quality'
+      name: "Codecov"
+      script: MIX_ENV=test mix do compile --warnings-as-errors, coveralls.json
 
 cache:
   directories:
