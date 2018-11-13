@@ -9,10 +9,6 @@ defmodule PhoawWeb.Router do
     plug :put_secure_browser_headers
   end
 
-  pipeline :api do
-    plug :accepts, ["json"]
-  end
-
   scope "/", PhoawWeb do
     pipe_through :browser
 
