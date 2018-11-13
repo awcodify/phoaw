@@ -20,4 +20,4 @@ config :phoaw, Phoaw.Repo,
 # Configure comeonin to make it faster
 config :bcrypt_elixir, log_rounds: 4
 
-import_config "dev.secret.exs"
+import_config "test.secret.exs"
