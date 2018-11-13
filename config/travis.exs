@@ -1,3 +1,5 @@
+use Mix.Config
+
 config :phoaw, Phoaw.Repo,
   username: "postgres",
   password: "postgres",
