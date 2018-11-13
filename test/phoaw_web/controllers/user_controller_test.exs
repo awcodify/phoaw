@@ -15,7 +15,7 @@ defmodule PhoawWeb.UserControllerTest do
     password_confirmation: "update1234",
     username: "some updated username"
   }
-  @invalid_attrs %{email: nil, password: nil, password: nil, username: nil}
+  @invalid_attrs %{email: nil, password: nil, password_confirmation: nil, username: nil}
 
   def fixture(:user) do
     {:ok, user} = Contents.create_user(@create_attrs)
