@@ -1,4 +1,7 @@
 defmodule Phoaw.Contents.User do
+  @moduledoc """
+    TODO: add documentations here
+  """
   use Ecto.Schema
   import Ecto.Changeset
   import Comeonin.Bcrypt, only: [hashpwsalt: 1]
