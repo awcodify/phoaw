@@ -14,11 +14,11 @@ services:
   - postgresql
 
 before_script:
-  - cp config/travis.exs config/dev.secret.exs
-  - mix local.rebar --force
-  - mix local.hex --force
-  - mix deps.get
-  - mix do ecto.create, ecto.migrate
+  - cp config/travis.exs config/test.secret.exs
+  - MIX_ENV=test mix local.rebar --force
+  - MIX_ENV=test mix local.hex --force
+  - MIX_ENV=test mix deps.get
+  - MIX_ENV=test mix do ecto.create, ecto.migrate
 
 install: true
 
