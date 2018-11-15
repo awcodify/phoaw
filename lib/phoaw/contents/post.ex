@@ -1,4 +1,7 @@
 defmodule Phoaw.Contents.Post do
+  @moduledoc """
+    TODO: add documentations here
+  """
   use Ecto.Schema
   import Ecto.Changeset
 

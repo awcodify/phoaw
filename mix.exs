@@ -10,7 +10,13 @@ defmodule Phoaw.MixProject do
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      preferred_cli_env: [
+        "coveralls": :test,
+        "coveralls.html": :test,
+        "coveralls.json": :test,
+      ],
+      test_coverage: [tool: ExCoveralls],
     ]
   end
 
@@ -44,7 +50,9 @@ defmodule Phoaw.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:comeonin, "~> 4.0"},
-      {:bcrypt_elixir, "~> 1.0"}
+      {:bcrypt_elixir, "~> 1.0"},
+      {:excoveralls, "~> 0.5.7", only: :test},
+			{:credo, "~> 0.10.0", only: [:dev, :test], runtime: false},
     ]
   end
 
