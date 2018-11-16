@@ -3,7 +3,6 @@ defmodule PhoawWeb.SessionController do
   import Comeonin.Bcrypt, only: [checkpw: 2]
 
   alias Phoaw.Contents.User
-  alias Phoaw.LayoutView
   alias Phoaw.Repo
 
   plug :scrub_params, "user" when action in [:create]
