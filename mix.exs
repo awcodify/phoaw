@@ -12,11 +12,11 @@ defmodule Phoaw.MixProject do
       aliases: aliases(),
       deps: deps(),
       preferred_cli_env: [
-        "coveralls": :test,
+        coveralls: :test,
         "coveralls.html": :test,
-        "coveralls.json": :test,
+        "coveralls.json": :test
       ],
-      test_coverage: [tool: ExCoveralls],
+      test_coverage: [tool: ExCoveralls]
     ]
   end
 
@@ -52,7 +52,7 @@ defmodule Phoaw.MixProject do
       {:comeonin, "~> 4.0"},
       {:bcrypt_elixir, "~> 1.0"},
       {:excoveralls, "~> 0.5.7", only: :test},
-			{:credo, "~> 0.10.0", only: [:dev, :test], runtime: false},
+      {:credo, "~> 0.10.0", only: [:dev, :test], runtime: false}
     ]
   end
 
