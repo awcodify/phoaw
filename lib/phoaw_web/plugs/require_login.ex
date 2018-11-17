@@ -1,4 +1,9 @@
 defmodule PhoawWeb.Plugs.RequireLogin do
+  @moduledoc """
+  This is Require Login Plug module.
+  Use this module on controller that have require login action
+  """
+
   import Plug.Conn
   use PhoawWeb, :controller
 
