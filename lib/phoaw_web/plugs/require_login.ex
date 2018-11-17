@@ -1,4 +1,4 @@
-defmodule PhoawWeb.Plugs.Authorizer do
+defmodule PhoawWeb.Plugs.RequireLogin do
   import Plug.Conn
   use PhoawWeb, :controller
 
