@@ -2,8 +2,6 @@ defmodule PhoawWeb.Plugs.Authorizer do
   import Plug.Conn
   use PhoawWeb, :controller
 
-  alias PhoawWeb.Plugs.Authorizer
-
   def init(default), do: default
 
   def call(conn, _default) do
