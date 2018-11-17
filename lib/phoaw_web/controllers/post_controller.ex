@@ -4,6 +4,8 @@ defmodule PhoawWeb.PostController do
   alias Phoaw.Contents
   alias Phoaw.Contents.Post
 
+  plug PhoawWeb.Plugs.Authorizer when action not in [:index, :show]
+
   def index(conn, _params) do
     posts = Contents.list_posts()
     render(conn, "index.html", posts: posts)
