@@ -22,7 +22,7 @@ before_script:
 
 install: true
 
-jobs:  
+jobs:
   include:
     - stage: 'Code Quality'
       name: "Excoveralls & Codecov"
@@ -31,11 +31,6 @@ jobs:
       name: "Credo"
       script: MIX_ENV=test mix credo
       after_success: bash <(curl -s https://codecov.io/bash)
-    - stage: "Tests"
-      name: "Unit Tests"
-      script:
-        - MIX_ENV=test mix do ecto.create, ecto.migrate
-        - mix test
 
 cache:
   directories:
