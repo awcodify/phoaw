@@ -12,11 +12,11 @@ defmodule Phoaw.MixProject do
       aliases: aliases(),
       deps: deps(),
       preferred_cli_env: [
-        "coveralls": :test,
+        coveralls: :test,
         "coveralls.html": :test,
-        "coveralls.json": :test,
+        "coveralls.json": :test
       ],
-      test_coverage: [tool: ExCoveralls],
+      test_coverage: [tool: ExCoveralls]
     ]
   end
 
@@ -39,20 +39,21 @@ defmodule Phoaw.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:bcrypt_elixir, "~> 1.0"},
+      {:comeonin, "~> 4.0"},
+      {:credo, "~> 0.10.0", only: [:dev, :test], runtime: false},
+      {:ecto_sql, "~> 3.0"},
+      {:excoveralls, "~> 0.5.7", only: :test},
+      {:gettext, "~> 0.11"},
+      {:guardian, "~> 1.0"},
+      {:jason, "~> 1.0"},
       {:phoenix, "~> 1.4.0"},
       {:phoenix_pubsub, "~> 1.1"},
       {:phoenix_ecto, "~> 4.0"},
-      {:ecto_sql, "~> 3.0"},
-      {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 2.11"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:gettext, "~> 0.11"},
-      {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:comeonin, "~> 4.0"},
-      {:bcrypt_elixir, "~> 1.0"},
-      {:excoveralls, "~> 0.5.7", only: :test},
-			{:credo, "~> 0.10.0", only: [:dev, :test], runtime: false},
+      {:postgrex, ">= 0.0.0"}
     ]
   end
 
