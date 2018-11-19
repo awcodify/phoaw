@@ -8,7 +8,7 @@ otp_release:
 sudo: false
 
 addons:
-  postgresql: '9.4'
+  postgresql: "9.4"
 
 services:
   - postgresql
@@ -24,11 +24,11 @@ install: true
 
 jobs:
   include:
-    - stage: 'Code Quality'
+    - stage: "Code Quality"
       name: "Credo"
       script: MIX_ENV=test mix credo
       after_success: bash <(curl -s https://codecov.io/bash)
-    - stage: 'Test and Coverage'
+    - stage: "Test and Coverage"
       name: "Excoveralls & Codecov"
       script: MIX_ENV=test mix do compile --warnings-as-errors, coveralls.json
 
