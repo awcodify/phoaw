@@ -53,6 +53,7 @@ defmodule Phoaw.MixProject do
       {:bcrypt_elixir, "~> 1.0"},
       {:excoveralls, "~> 0.5.7", only: :test},
       {:credo, "~> 0.10.0", only: [:dev, :test], runtime: false},
+      {:guardian, "~> 1.0"},
       {:bodyguard, "~> 2.2"},
     ]
   end
