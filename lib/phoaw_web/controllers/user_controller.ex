@@ -34,7 +34,13 @@ defmodule PhoawWeb.UserController do
   def edit(conn, %{"id" => id}) do
     user = Contents.get_user!(id)
     changeset = Contents.change_user(user)
-    render(conn, "edit.html", user: user, changeset: changeset)
+    # render(conn, "edit.html", user: user, changeset: changeset)
+    with :ok <- Bodyguard.permit(User, :edit_user, user, user),
+      # {:ok, post} <- User.edit_user(post, post_params)
+      render(conn, "edit.html", user: user, changeset: changeset)
+    do
+      redirect(conn, to: Routes.user_path(conn, :show, user))
+    end
   end
 
   def update(conn, %{"id" => id, "user" => user_params}) do
