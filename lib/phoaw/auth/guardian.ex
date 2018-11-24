@@ -15,7 +15,7 @@ defmodule Phoaw.Auth.Guardian do
 
   def resource_from_claims(claims) do
     id = claims["sub"]
-    user = Contents.get_user(id)
+    user = Contents.get_user!(id)
     {:ok, user}
   end
   def resource_from_claims(_claims) do

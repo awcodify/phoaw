@@ -17,13 +17,11 @@ defmodule PhoawWeb.Router do
   end
 
   scope "/", PhoawWeb do
-    pipe_through :browser
+    pipe_through [:browser, :auth]
 
     get "/", PageController, :index
-    # resources "/posts", PostController
-    resources "/sessions", SessionController
-    # resources "/users", UserController
     post "/logout", SessionController, :logout
+    resources "/sessions", SessionController
   end
 
   scope "/", PhoawWeb do
