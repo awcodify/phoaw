@@ -6,8 +6,6 @@ defmodule Phoaw.Contents.User do
   import Ecto.Changeset
   import Comeonin.Bcrypt, only: [hashpwsalt: 1]
 
-  defdelegate authorize(action, user, params), to: Phoaw.Policies.User
-
   schema "users" do
     field(:email, :string)
     field(:password_digest, :string)

@@ -3,6 +3,16 @@ defmodule PhoawWeb.PostControllerTest do
 
   alias Phoaw.Contents
 
+  @user_attrs %{
+    email: "test@example.com",
+    password: "test1234",
+    password_confirmation: "test1234",
+    username: "example"
+  }
+  @login_attrs %{
+    username: "example",
+    password: "test1234"
+  }
   @create_attrs %{body: "some body", title: "some title"}
   @update_attrs %{body: "some updated body", title: "some updated title"}
   @invalid_attrs %{body: nil, title: nil}
@@ -10,6 +20,13 @@ defmodule PhoawWeb.PostControllerTest do
   def fixture(:post) do
     {:ok, post} = Contents.create_post(@create_attrs)
     post
+  end
+
+  setup do
+    {:ok, user} = Contents.create_user(@user_attrs)
+    conn = build_conn()
+    conn = post(conn, Routes.session_path(conn, :create), user: @login_attrs)
+    {:ok, conn: conn, user: user}
   end
 
   describe "index" do

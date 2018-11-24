@@ -9,6 +9,10 @@ defmodule PhoawWeb.UserControllerTest do
     password_confirmation: "test1234",
     username: "example"
   }
+  @login_attrs %{
+    username: "example",
+    password: "test1234"
+  }
   @update_attrs %{
     email: "some updated email",
     password: "update1234",
@@ -20,6 +24,13 @@ defmodule PhoawWeb.UserControllerTest do
   def fixture(:user) do
     {:ok, user} = Contents.create_user(@create_attrs)
     user
+  end
+
+  setup do
+    {:ok, user} = Contents.create_user(@create_attrs)
+    conn = build_conn()
+    conn = post(conn, Routes.session_path(conn, :create), user: @login_attrs)
+    {:ok, conn: conn, user: user}
   end
 
   describe "index" do

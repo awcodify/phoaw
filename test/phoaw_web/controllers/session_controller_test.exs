@@ -1,5 +1,4 @@
 defmodule PhoawWeb.SessionControllerTest do
-  import Guardian.Plug.VerifySession
   use PhoawWeb.ConnCase
 
   alias Phoaw.Contents
@@ -44,7 +43,7 @@ defmodule PhoawWeb.SessionControllerTest do
   end
 
   describe "Log out user" do
-    test "redirects to home page when logout successful", %{conn: conn, user: user} do
+    test "redirects to home page when logout successful", %{conn: conn} do
       conn = post(conn, Routes.session_path(conn, :create), user: @login_attrs)
       assert redirected_to(conn) == Routes.user_path(conn, :index)
 
