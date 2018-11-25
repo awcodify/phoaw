@@ -1,4 +1,5 @@
 # Phoaw
+[![Build Status](https://travis-ci.org/awcodify/phoaw.svg?branch=master)](https://travis-ci.org/awcodify/phoaw)
 
 Phoaw - Phoenix Awesome, is big dream with consistent action to build a slick, fast, and powerful blogging framerork using Phoenix Elixir.
 
