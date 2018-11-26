@@ -1,4 +1,8 @@
 defmodule Phoaw.Auth.Pipeline do
+  @moduledoc """
+  This module define pipeline used for Guardian authentication
+  """
+
   use Guardian.Plug.Pipeline,
     otp_app: :auth_ex,
     error_handler: Phoaw.Auth.ErrorHandler,

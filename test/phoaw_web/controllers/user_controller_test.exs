@@ -38,6 +38,12 @@ defmodule PhoawWeb.UserControllerTest do
       conn = get(conn, Routes.user_path(conn, :index))
       assert html_response(conn, 200) =~ "Listing Users"
     end
+
+    test "unauthenticated user", %{conn: conn} do
+      conn = post(conn, Routes.session_path(conn, :logout))
+      conn = get(conn, Routes.user_path(conn, :index))
+      assert html_response(conn, 401) =~ "unauthenticated"
+    end
   end
 
   describe "new user" do

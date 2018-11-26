@@ -12,8 +12,8 @@ defmodule PhoawWeb.SessionController do
   end
 
   def create(conn, %{"user" => session_params}) do
-    Auth.authenticate_user(session_params["username"], session_params["password"])
-    |> login_reply(conn)
+    authenticated = Auth.authenticate_user(session_params["username"], session_params["password"])
+    authenticated |> login_reply(conn)
   end
 
   defp login_reply({:error, error}, conn) do

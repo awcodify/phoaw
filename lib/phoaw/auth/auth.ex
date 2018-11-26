@@ -1,4 +1,8 @@
 defmodule Phoaw.Auth.Auth do
+  @moduledoc """
+  This module define Guardian authenticate user
+  """
+
   import Ecto.Query, warn: false
 
   alias Phoaw.Repo
@@ -6,8 +10,8 @@ defmodule Phoaw.Auth.Auth do
   alias Phoaw.Contents.User
 
   def authenticate_user(username, plain_text_password) do
-    Repo.one(from u in User, where: u.username == ^username)
-    |> check_password(plain_text_password)
+    user = Repo.one(from u in User, where: u.username == ^username)
+    user |> check_password(plain_text_password)
   end
 
   defp check_password(nil, _), do: {:error, "Incorrect username or password"}

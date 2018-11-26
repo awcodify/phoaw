@@ -20,6 +20,9 @@
   },
 
   "skip_files": [
-    "test"
+    "test",
+    "lib/phoaw/application.ex",
+    "lib/phoaw_web.ex",
+    "lib/phoaw_web/views/error_helpers.ex"
   ]
 }
