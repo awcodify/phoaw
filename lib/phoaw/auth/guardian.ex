@@ -9,7 +9,8 @@ defmodule Phoaw.Auth.Guardian do
     sub = to_string(user.id)
     {:ok, sub}
   end
-  def subject_for_token(_, _) do
+
+  def subject_for_token do
     {:error, :reason_for_error}
   end
 
@@ -18,7 +19,8 @@ defmodule Phoaw.Auth.Guardian do
     user = Contents.get_user!(id)
     {:ok, user}
   end
-  def resource_from_claims(_claims) do
+
+  def resource_from_claims do
     {:error, :reason_for_error}
   end
 end
