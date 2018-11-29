@@ -13,6 +13,9 @@
         <nav role="navigation">
           <ul>
             <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
+            <%= if Guardian.Plug.authenticated?(@conn, []) do %>
+              <%= link "Logout", to: Routes.session_path(@conn, :logout), method: :post %>
+            <% end %>
           </ul>
         </nav>
         <a href="http://phoenixframework.org/" class="phx-logo">

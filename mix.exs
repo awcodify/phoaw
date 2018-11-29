@@ -52,7 +52,8 @@ defmodule Phoaw.MixProject do
       {:comeonin, "~> 4.0"},
       {:bcrypt_elixir, "~> 1.0"},
       {:excoveralls, "~> 0.5.7", only: :test},
-			{:credo, "~> 0.10.0", only: [:dev, :test], runtime: false},
+      {:credo, "~> 0.10.0", only: [:dev, :test], runtime: false},
+      {:guardian, "~> 1.0"},
     ]
   end
 

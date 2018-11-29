@@ -134,6 +134,24 @@ defmodule Phoaw.Contents do
   def get_user!(id), do: Repo.get!(User, id)
 
   @doc """
+  Gets a single user by username.
+
+  return nil if the User does not exist.
+
+  ## Examples
+
+      iex> get_user_by_username!('example@mail.com')
+      %User{}
+
+      iex> get_user_by_username!('example@nothing.com')
+      nil
+
+  """
+  def get_user_by_username!(username) do
+    Repo.one(from u in User, where: u.username == ^username)
+  end
+
+  @doc """
   Creates a user.
 
   ## Examples

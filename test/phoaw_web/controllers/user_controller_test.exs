@@ -9,6 +9,10 @@ defmodule PhoawWeb.UserControllerTest do
     password_confirmation: "test1234",
     username: "example"
   }
+  @login_attrs %{
+    username: "example",
+    password: "test1234"
+  }
   @update_attrs %{
     email: "some updated email",
     password: "update1234",
@@ -22,10 +26,23 @@ defmodule PhoawWeb.UserControllerTest do
     user
   end
 
+  setup do
+    {:ok, user} = Contents.create_user(@create_attrs)
+    conn = build_conn()
+    conn = post(conn, Routes.session_path(conn, :create), user: @login_attrs)
+    {:ok, conn: conn, user: user}
+  end
+
   describe "index" do
     test "lists all users", %{conn: conn} do
       conn = get(conn, Routes.user_path(conn, :index))
       assert html_response(conn, 200) =~ "Listing Users"
+    end
+
+    test "unauthenticated user", %{conn: conn} do
+      conn = post(conn, Routes.session_path(conn, :logout))
+      conn = get(conn, Routes.user_path(conn, :index))
+      assert html_response(conn, 401) =~ "unauthenticated"
     end
   end
 
