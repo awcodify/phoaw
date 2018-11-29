@@ -3,9 +3,6 @@ defmodule Phoaw.Auth.Auth do
   This module define Guardian authenticate user
   """
 
-  import Ecto.Query, warn: false
-
-  alias Phoaw.Repo
   alias Comeonin.Bcrypt
   alias Phoaw.Contents
 
