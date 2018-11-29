@@ -7,14 +7,15 @@ defmodule Phoaw.Auth.Auth do
 
   alias Phoaw.Repo
   alias Comeonin.Bcrypt
-  alias Phoaw.Contents.User
+  alias Phoaw.Contents
 
   def authenticate_user(username, plain_text_password) do
-    user = Repo.one(from u in User, where: u.username == ^username)
+    user = Contents.get_user_by_username!(username)
     user |> check_password(plain_text_password)
   end
 
   defp check_password(nil, _), do: {:error, "Incorrect username or password"}
+
   defp check_password(user, plain_text_password) do
     case Bcrypt.checkpw(plain_text_password, user.password_digest) do
       true -> {:ok, user}

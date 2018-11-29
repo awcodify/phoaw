@@ -4,7 +4,7 @@ defmodule Phoaw.Auth.Pipeline do
   """
 
   use Guardian.Plug.Pipeline,
-    otp_app: :auth_ex,
+    otp_app: :phoaw,
     error_handler: Phoaw.Auth.ErrorHandler,
     module: Phoaw.Auth.Guardian
   # If there is a session token, validate it

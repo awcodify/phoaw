@@ -21,6 +21,7 @@ defmodule PhoawWeb.SessionController do
     |> put_flash(:error, error)
     |> redirect(to: Routes.session_path(conn, :new))
   end
+
   defp login_reply({:ok, user}, conn) do
     conn
     |> put_flash(:success, "Welcome back!")
