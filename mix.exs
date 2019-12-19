@@ -49,7 +49,7 @@ defmodule Phoaw.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:comeonin, "~> 4.0"},
+      {:comeonin, "~> 5.1"},
       {:bcrypt_elixir, "~> 1.0"},
       {:excoveralls, "~> 0.5.7", only: :test},
 			{:credo, "~> 1.1.0", only: [:dev, :test], runtime: false},
